@@ -1,37 +1,61 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+/* eslint-disable */
+import tsPlugin from '@typescript-eslint/eslint-plugin';
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
+import eslintConfigPrettier from 'eslint-config-prettier';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import { defineConfig, globalIgnores } from 'eslint/config';
 
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
+export default defineConfig([
+  ...nextCoreWebVitals,
+
   {
-    files: ["**/*.ts", "**/*.tsx"],
-    languageOptions: {
-      parser: tsParser,
-      parserOptions: {
-        project: "./tsconfig.json",
-      },
+    rules: {
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
     },
-    plugins: {
-      import: importPlugin,
-    },
-    settings: {
-      "import/resolver": {
-        typescript: {
-          project: "./tsconfig.json",
-        }
-      }
-    }
-  }
-]);
+  },
 
-export default eslintConfig;
+  {
+    files: ['**/*.{ts,tsx,js,jsx,mjs,cjs}'],
+    plugins: {
+      tsLint: tsPlugin,
+      'simple-import-sort': simpleImportSort,
+    },
+    rules: {
+      'tsLint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
+      ],
+      'simple-import-sort/exports': 'error',
+      'simple-import-sort/imports': [
+        'warn',
+        {
+          groups: [
+            ['^react$', '^next', '^next/'],
+            ['^@/'],
+            ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+            ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+            ['^@?\\w'],
+            [
+              '^.+\\.(css|scss)$',
+              '^@emotion/styled$',
+              '^@emotion/react$',
+              '.*\\.styled\\.(ts|tsx)$',
+            ],
+          ],
+        },
+      ],
+    },
+  },
+
+  eslintConfigPrettier,
+
+  globalIgnores([
+    '.next/**',
+    'out/**',
+    'build/**',
+    'dist/**',
+    'coverage/**',
+    'node_modules/**',
+    '.yarn/**',
+  ]),
+]);

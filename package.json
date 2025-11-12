@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --webpack",
+    "dev": "concurrently -n NEXT,OPEN \"yarn:dev:next\" \"yarn:dev:open\"",
+    "dev:next": "next dev --turbo .",
+    "dev:open": "wait-on http://localhost:3000 && open-cli http://localhost:3000",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "emotion": "^11.0.0",
     "next": "^16.0.1",
     "react": "19.2.0",
     "react-dom": "19.2.0"
@@ -17,9 +20,22 @@
     "@types/node": "^24.10.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
-    "babel-plugin-react-compiler": "1.0.0",
-    "eslint": "^9",
-    "eslint-config-next": "16.0.1",
-    "typescript": "^5.9.3"
+    "@typescript-eslint/eslint-plugin": "^8.46.4",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.0.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-emotion": "^11.0.0",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "open-cli": "^8.0.0",
+    "postcss-jsx": "^0.36.4",
+    "postcss-scss": "^4.0.9",
+    "postcss-styled-syntax": "^0.7.1",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-order": "^7.0.0",
+    "typescript": "^5.9.3",
+    "wait-on": "^9.0.3"
   }
 }
