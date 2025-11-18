@@ -1,4 +1,3 @@
-/* eslint-disable */
 import tsPlugin from '@typescript-eslint/eslint-plugin';
 import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
 import eslintConfigPrettier from 'eslint-config-prettier';
@@ -44,6 +43,15 @@ export default defineConfig([
           ],
         },
       ],
+    },
+  },
+
+  {
+    files: ['eslint.config.mjs', 'stylelintrc.mjs', 'next.config.js'],
+    rules: {
+      'import/no-anonymous-default-export': 'off',
+      'simple-import-sort/imports': 'off',
+      'simple-import-sort/exports': 'off',
     },
   },
 

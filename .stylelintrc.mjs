@@ -1,5 +1,4 @@
-/* eslint-disable */
-export default {
+const stylelintConfig = {
   extends: ['stylelint-config-standard'],
   plugins: ['stylelint-order'],
   customSyntax: 'postcss-scss',
@@ -134,3 +133,5 @@ export default {
     '**/out/**',
   ],
 };
+
+export default stylelintConfig;
