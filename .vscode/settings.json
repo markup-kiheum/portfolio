@@ -3,7 +3,7 @@
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always",
-    "source.organizeImports": "always",
+    "source.organizeImports": "never",
     "source.fixAll.stylelint": "always"
   },
   "search.exclude": {
@@ -21,8 +21,11 @@
     "typescriptreact"
   ],
   "stylelint.enable": true,
-  "stylelint.validate": ["css", "scss", "javascriptreact", "typescriptreact"],
+  "stylelint.validate": ["css", "scss"],
   "css.validate": false,
   "scss.validate": false,
+  "files.associations": {
+    "*.module.scss": "scss"
+  },
   "prettier.requireConfig": true
 }

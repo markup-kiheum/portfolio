@@ -1,0 +1,55 @@
+@use '@/styles/token' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  padding: 0 20px;
+
+  @include desktop {
+    width: 1024px;
+    margin: 0 auto;
+  }
+}
+
+.logo {
+  position: relative;
+  z-index: 98;
+}
+
+.homeLink {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 145px;
+  height: 60px;
+  font-size: 0;
+  text-indent: -9999px;
+  background: url('../../assets/images/logo.png') no-repeat 50% 50% / 115px 29px;
+}
+
+.nav {
+  position: relative;
+  height: 100%;
+  padding-left: 200px;
+}
+
+.navList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}

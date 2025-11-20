@@ -11,6 +11,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@fontsource/noto-sans-kr": "^5.2.8",
+    "clsx": "^2.1.1",
     "emotion": "^11.0.0",
     "next": "^16.0.1",
     "react": "19.2.0",
@@ -32,8 +34,10 @@
     "postcss-scss": "^4.0.9",
     "postcss-styled-syntax": "^0.7.1",
     "prettier": "^3.6.2",
+    "sass": "^1.94.2",
     "stylelint": "^16.25.0",
     "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-standard-scss": "^16.0.0",
     "stylelint-order": "^7.0.0",
     "typescript": "^5.9.3",
     "wait-on": "^9.0.3"
