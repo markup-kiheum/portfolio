@@ -1,12 +1,3 @@
-export type RoutesType = 'about' | 'cases' | 'contact';
-
-export interface RoutesInterface {
-  slug: RoutesType;
-  path: string;
-  label: string;
-  description?: string;
-}
-
 export interface HomeRoute {
   path: string;
   label: string;
@@ -15,9 +6,9 @@ export interface HomeRoute {
 export const HOME_ROUTE: HomeRoute = {
   path: '/',
   label: 'Home',
-};
+} as const;
 
-export const ROUTES: RoutesInterface[] = [
+export const ROUTES = [
   {
     slug: 'about',
     path: '/about',
@@ -36,4 +27,8 @@ export const ROUTES: RoutesInterface[] = [
     label: 'Contact',
     description: '연락처와 링크',
   },
-];
+] as const;
+
+export type RoutesType = (typeof ROUTES)[number]['slug'];
+
+export type RoutesInterface = (typeof ROUTES)[number];

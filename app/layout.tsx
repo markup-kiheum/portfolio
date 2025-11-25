@@ -1,8 +1,14 @@
 import type { Metadata } from 'next';
+import { Noto_Sans_KR } from 'next/font/google';
 
 import Header from '@/container/Header';
 
-import '@/styles/globals.scss';
+import '@/styles/globals.css';
+
+const notoSansKr = Noto_Sans_KR({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+});
 
 export const metadata: Metadata = {
   title: 'Markup Kiheum — Frontend UI Developer',
@@ -49,7 +55,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>
+      <body className={notoSansKr.className}>
         <Header />
         {children}
       </body>

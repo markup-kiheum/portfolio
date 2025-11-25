@@ -1,18 +1,16 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import cx from 'clsx';
+
 import { HOME_ROUTE, ROUTES } from '@/lib/constants/routes';
 
-import clsx from 'clsx';
-
-import styles from './Header.module.scss';
+import styles from './Header.module.css';
 
 export default function Header() {
   const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
     { path: HOME_ROUTE.path, label: HOME_ROUTE.label },
@@ -22,15 +20,11 @@ export default function Header() {
     })),
   ];
 
-  const handleCloseMenu = () => {
-    setIsOpen(false);
-  };
-
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
         <h1 className={styles.logo}>
-          <Link href="/" className={styles.homeLink} onClick={handleCloseMenu}>
+          <Link href="/" className={styles.homeLink}>
             Markup Kiheum Portfolio Logo
           </Link>
         </h1>
@@ -47,7 +41,7 @@ export default function Header() {
                 <li key={item.path} className={styles.navItem}>
                   <Link
                     href={item.path}
-                    className={clsx(styles.navLink, {
+                    className={cx(styles.navLink, {
                       [styles.navLinkActive]: isActive,
                     })}
                   >
@@ -58,9 +52,6 @@ export default function Header() {
             })}
           </ul>
         </nav>
-        {isOpen && (
-          <button className={styles.mobileMenuButton}>모바일 버튼</button>
-        )}
       </div>
     </header>
   );

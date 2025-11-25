@@ -1,7 +1,7 @@
 import tsPlugin from '@typescript-eslint/eslint-plugin';
+import importPlugin from 'eslint-plugin-import';
 import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
 import eslintConfigPrettier from 'eslint-config-prettier';
-import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
@@ -17,25 +17,59 @@ export default defineConfig([
     files: ['**/*.{ts,tsx,js,jsx,mjs,cjs}'],
     plugins: {
       tsLint: tsPlugin,
-      'simple-import-sort': simpleImportSort,
+      import: importPlugin,
     },
     rules: {
       'tsLint/no-unused-vars': [
         'warn',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' },
       ],
-      'simple-import-sort/exports': 'error',
-      'simple-import-sort/imports': [
+
+      'import/order': [
         'warn',
         {
           groups: [
-            ['^react$', '^next', '^next/'],
-            ['^@/'],
-            ['^@?\\w'],
-            ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
-            ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
-            ['^.+\\.(css|scss)$'],
+            ['builtin', 'external'],
+            ['internal'],
+            ['parent', 'sibling', 'index'],
           ],
+
+          pathGroups: [
+            {
+              pattern: '{react*,react/*,@types/react*,@types/react/*}',
+              group: 'external',
+              position: 'before',
+            },
+            {
+              pattern: '{next,next/**}',
+              group: 'external',
+              position: 'after',
+            },
+            {
+              pattern: '@/**',
+              group: 'internal',
+              position: 'after',
+            },
+            {
+              pattern: '**/*.{png,jpg,jpeg,svg,webp,gif}',
+              group: 'parent',
+              position: 'after',
+            },
+            {
+              pattern: '**/*.{module.css,css}',
+              group: 'index',
+              position: 'after',
+            },
+          ],
+
+          pathGroupsExcludedImportTypes: ['builtin'],
+
+          'newlines-between': 'always',
+
+          alphabetize: {
+            order: 'asc',
+            caseInsensitive: true,
+          },
         },
       ],
     },
@@ -45,8 +79,7 @@ export default defineConfig([
     files: ['eslint.config.mjs', 'stylelintrc.mjs', 'next.config.js'],
     rules: {
       'import/no-anonymous-default-export': 'off',
-      'simple-import-sort/imports': 'off',
-      'simple-import-sort/exports': 'off',
+      'import/order': 'off',
     },
   },
 
