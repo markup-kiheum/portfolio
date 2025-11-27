@@ -21,11 +21,8 @@
     "typescriptreact"
   ],
   "stylelint.enable": true,
-  "stylelint.validate": ["css", "scss"],
+  "stylelint.validate": ["css", "postcss"],
   "css.validate": false,
   "scss.validate": false,
-  "files.associations": {
-    "*.module.scss": "scss"
-  },
   "prettier.requireConfig": true
 }

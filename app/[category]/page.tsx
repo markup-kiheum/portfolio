@@ -2,9 +2,9 @@ import type { ReactNode } from 'react';
 
 import { notFound } from 'next/navigation';
 
-import About from '@/container/About';
-import Cases from '@/container/Cases';
-import Contact from '@/container/Contact';
+import Blog from '@/container/Blog';
+import Home from '@/container/Home';
+import Playground from '@/container/Playground';
 import { ROUTES } from '@/lib/constants/routes';
 import type { RoutesType } from '@/lib/constants/routes';
 
@@ -15,9 +15,9 @@ interface CategoryPageProps {
 }
 
 const CATEGORY_COMPONENTS: Record<RoutesType, ReactNode> = {
-  about: <About />,
-  cases: <Cases />,
-  contact: <Contact />,
+  home: <Home />,
+  playground: <Playground />,
+  blog: <Blog />,
 };
 
 export const dynamicParams = false;

@@ -1,24 +1,43 @@
 /* Design Tokens */
 :root {
-  /* Color Palette */
-  --color-bg: #07090b;
-  --color-surface: #13151a;
-  --color-border: #262933;
-  --color-primary: #7ed644;
-  --color-text: #f5f5f5;
-
   /* Typography */
+  --font-size-large: 18px;
   --font-size-base: 16px;
+  --font-size-small: 14px;
   --line-height-base: 1.5;
 
   /* Border Radius */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
+  --radius-small: 4px;
+  --radius-medium: 8px;
+  --radius-large: 12px;
 
   /* Breakpoints */
   --breakpoint-tablet: 768px;
   --breakpoint-desktop: 1024px;
+
+  color-scheme: light dark;
+}
+
+/* Dark Theme */
+:root[data-theme='dark'] {
+  --color-bg: #061a29;
+  --color-theme-switch-button-bg: rgb(229 231 235 / 40%);
+  --color-theme-switch-icon-bg: rgb(6 26 41 / 80%);
+  --color-surface: #13151a;
+  --color-border: #262933;
+  --color-primary: #7ed644;
+  --color-text: #e5e7eb;
+}
+
+/* Light Theme */
+:root[data-theme='light'] {
+  --color-bg: #e5e7eb;
+  --color-theme-switch-button-bg: rgb(6 26 41 / 60%);
+  --color-theme-switch-icon-bg: rgb(229 231 235 / 60%);
+  --color-surface: #fff;
+  --color-border: #dfe3e8;
+  --color-primary: #5fb637;
+  --color-text: #061a29;
 }
 
 /* Reset & Base */

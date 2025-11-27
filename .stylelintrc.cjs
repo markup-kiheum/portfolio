@@ -1,5 +1,5 @@
 /** @type {import('stylelint').Config} */
-const StyleLintConfig = {
+module.exports = {
   extends: ['stylelint-config-standard'],
 
   plugins: ['stylelint-order'],
@@ -172,5 +172,3 @@ const StyleLintConfig = {
     '**/out/**',
   ],
 };
-
-export default StyleLintConfig;

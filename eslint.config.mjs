@@ -29,9 +29,11 @@ export default defineConfig([
         'warn',
         {
           groups: [
-            ['builtin', 'external'],
+            ['builtin'],
+            ['external'],
             ['internal'],
-            ['parent', 'sibling', 'index'],
+            ['parent', 'sibling'],
+            ['index'],
           ],
 
           pathGroups: [
@@ -43,7 +45,7 @@ export default defineConfig([
             {
               pattern: '{next,next/**}',
               group: 'external',
-              position: 'after',
+              position: 'before',
             },
             {
               pattern: '@/**',
@@ -76,7 +78,7 @@ export default defineConfig([
   },
 
   {
-    files: ['eslint.config.mjs', 'stylelintrc.mjs', 'next.config.js'],
+    files: ['eslint.config.mjs', '.stylelintrc.cjs', 'next.config.js'],
     rules: {
       'import/no-anonymous-default-export': 'off',
       'import/order': 'off',
