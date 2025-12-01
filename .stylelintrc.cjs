@@ -1,11 +1,12 @@
 /** @type {import('stylelint').Config} */
-const StyleLintConfig = {
-  extends: ['stylelint-config-standard', 'stylelint-config-standard-scss'],
+module.exports = {
+  extends: ['stylelint-config-standard'],
 
   plugins: ['stylelint-order'],
 
   rules: {
     'selector-class-pattern': null,
+
     'order/properties-order': [
       {
         groupName: 'display & visibility',
@@ -145,11 +146,6 @@ const StyleLintConfig = {
 
     'order/order': [
       'custom-properties',
-      'dollar-variables',
-      { type: 'at-rule', name: 'use' },
-      { type: 'at-rule', name: 'forward' },
-      { type: 'at-rule', name: 'import' },
-      { type: 'at-rule', name: 'mixin' },
       'declarations',
       { type: 'rule' },
       { type: 'at-rule', name: 'media' },
@@ -167,13 +163,6 @@ const StyleLintConfig = {
     'no-descending-specificity': null,
   },
 
-  overrides: [
-    {
-      files: ['**/*.scss', '**/*.module.scss'],
-      customSyntax: 'postcss-scss',
-    },
-  ],
-
   ignoreFiles: [
     '**/*.{js,jsx,ts,tsx}',
     '**/node_modules/**',
@@ -183,5 +172,3 @@ const StyleLintConfig = {
     '**/out/**',
   ],
 };
-
-export default StyleLintConfig;
