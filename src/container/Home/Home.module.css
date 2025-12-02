@@ -18,14 +18,10 @@
   font-weight: 400;
 }
 
-.description {
-  padding-top: 24px;
-}
-
 .questionList {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 48px;
   padding: 40px 0;
 }
 
@@ -43,26 +39,16 @@
     font-weight: 700;
     content: 'Q.';
   }
-
-  &::after {
-    position: absolute;
-    bottom: 0;
-    left: 24px;
-    width: calc(100% - 24px);
-    height: 1px;
-    content: '';
-    background-color: #fff;
-  }
 }
 
 .answer {
   position: relative;
-  padding-left: 24px;
-  margin-top: 12px;
+  padding: 24px 0 24px 24px;
+  white-space: pre-line;
 
   &::before {
     position: absolute;
-    top: 0;
+    top: 24px;
     left: 0;
     color: var(--color-primary);
     font-weight: 700;

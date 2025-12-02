@@ -1,15 +1,30 @@
+.scrollTrigger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
 .header {
   position: sticky;
   top: 0;
   left: 0;
   z-index: 99;
   width: 100%;
+  transition: background-color 200ms ease-in-out;
+}
+
+.headerSticky {
+  background-color: var(--color-sticky-header-bg);
+  backdrop-filter: blur(8px);
 }
 
 .inner {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
   position: relative;
   width: 100%;
@@ -50,6 +65,8 @@ html[data-theme='light'] .homeLink {
 .nav {
   position: relative;
   height: 100%;
+  padding: 0 60px;
+  flex-grow: 1;
 }
 
 .navList {
