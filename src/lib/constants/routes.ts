@@ -1,39 +1,30 @@
-export type RoutesType = 'about' | 'cases' | 'contact';
-
-export interface RoutesInterface {
-  slug: RoutesType;
-  path: string;
-  label: string;
-  description?: string;
-}
-
 export interface HomeRoute {
+  slug: string;
   path: string;
   label: string;
 }
 
-export const HOME_ROUTE: HomeRoute = {
-  path: '/',
-  label: 'Home',
-};
+export const ROUTES = [
+  {
+    slug: 'home',
+    path: '/',
+    label: 'Home',
+    description: '',
+  },
+  {
+    slug: 'playground',
+    path: '/playground',
+    label: 'Playground',
+    description: '프론트엔드 전반을 실험하고 배우는 공간입니다.',
+  },
+  {
+    slug: 'blog',
+    path: '/blog',
+    label: 'Blog',
+    description: '생각과 배운 점을 정리합니다.',
+  },
+] as const;
 
-export const ROUTES: RoutesInterface[] = [
-  {
-    slug: 'about',
-    path: '/about',
-    label: 'About',
-    description: '나에 대한 소개',
-  },
-  {
-    slug: 'cases',
-    path: '/cases',
-    label: 'Cases',
-    description: '실무/작업 하이라이트',
-  },
-  {
-    slug: 'contact',
-    path: '/contact',
-    label: 'Contact',
-    description: '연락처와 링크',
-  },
-];
+export type RoutesType = (typeof ROUTES)[number]['slug'];
+
+export type RoutesInterface = (typeof ROUTES)[number];

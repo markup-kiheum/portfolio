@@ -8,12 +8,11 @@
     "dev:open": "wait-on http://localhost:3000 && open-cli http://localhost:3000",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "lint:style": "stylelint \"**/*.css\""
   },
   "dependencies": {
-    "@fontsource/noto-sans-kr": "^5.2.8",
     "clsx": "^2.1.1",
-    "emotion": "^11.0.0",
     "next": "^16.0.1",
     "react": "19.2.0",
     "react-dom": "19.2.0"
@@ -27,17 +26,11 @@
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.1",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-emotion": "^11.0.0",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-import": "^2.32.0",
     "open-cli": "^8.0.0",
-    "postcss-jsx": "^0.36.4",
-    "postcss-scss": "^4.0.9",
-    "postcss-styled-syntax": "^0.7.1",
     "prettier": "^3.6.2",
-    "sass": "^1.94.2",
     "stylelint": "^16.25.0",
     "stylelint-config-standard": "^39.0.1",
-    "stylelint-config-standard-scss": "^16.0.0",
     "stylelint-order": "^7.0.0",
     "typescript": "^5.9.3",
     "wait-on": "^9.0.3"

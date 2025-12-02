@@ -1,4 +1,4 @@
-import styels from './MainContainer.module.scss';
+import styels from './MainContainer.module.css';
 
 export default function MainContainer() {
   return (

@@ -1,8 +1,16 @@
 import type { Metadata } from 'next';
+import { Noto_Sans_KR } from 'next/font/google';
+import Script from 'next/script';
 
 import Header from '@/container/Header';
+import { ThemeProvider } from '@/context/ThemeContext';
 
-import '@/styles/globals.scss';
+import '@/styles/globals.css';
+
+const notoSansKr = Noto_Sans_KR({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+});
 
 export const metadata: Metadata = {
   title: 'Markup Kiheum — Frontend UI Developer',
@@ -16,7 +24,7 @@ export const metadata: Metadata = {
     'Portfolio',
   ],
   authors: [{ name: 'Kiheum Hwang' }],
-  metadataBase: new URL('https://markup-kiheum.vercel.app'), // 배포 도메인
+  metadataBase: new URL('https://markup-kiheum.vercel.app'),
   openGraph: {
     title: 'Markup Kiheum — Frontend UI Developer',
     description: '꾸준히 발전하는 UI 개발자, Kiheum Hwang의 포트폴리오',
@@ -48,10 +56,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
-      <body>
-        <Header />
-        {children}
+    <html lang="ko" suppressHydrationWarning>
+      <head>
+        <Script
+          id="theme-script"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                try {
+                  var stored = localStorage.getItem('theme');
+                  var theme = stored || 'dark';
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {
+                  // 오류가 나더라도 전체 앱은 정상적으로 작동해야 하므로 무시한다. 
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className={notoSansKr.className}>
+        <ThemeProvider>
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
