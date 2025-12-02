@@ -63,10 +63,10 @@ html[data-theme='light'] .homeLink {
 }
 
 .nav {
+  flex-grow: 1;
   position: relative;
   height: 100%;
   padding: 0 60px;
-  flex-grow: 1;
 }
 
 .navList {
