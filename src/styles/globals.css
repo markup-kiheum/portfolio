@@ -139,3 +139,7 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.fontBold {
+  font-weight: 700;
+}
