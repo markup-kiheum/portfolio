@@ -107,6 +107,10 @@ html[data-theme='light'] .homeLink {
   }
 }
 
+.navLinkActive {
+  color: var(--color-primary);
+}
+
 .themeSwitch {
   display: block;
   position: relative;
