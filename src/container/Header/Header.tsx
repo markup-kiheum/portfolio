@@ -45,7 +45,7 @@ export default function Header() {
           <nav className={styles.nav} aria-label="Primary navigation">
             <ul className={styles.navList}>
               {navItems.map((item) => {
-                const isActive = pathname?.startsWith(item.path);
+                const isActive = !!pathname?.startsWith(item.path);
 
                 return (
                   <li key={item.path} className={styles.navItem}>

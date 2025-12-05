@@ -14,8 +14,12 @@
 }
 
 .title {
+  font-size: var(--font-size-large);
+}
+
+.description {
+  padding-top: 16px;
   font-size: var(--font-size-base);
-  font-weight: 400;
 }
 
 .questionList {
