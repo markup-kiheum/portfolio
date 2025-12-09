@@ -6,6 +6,12 @@ export interface HomeRoute {
 
 export const ROUTES = [
   {
+    slug: 'home',
+    path: '/',
+    label: 'Home',
+    description: '자문자답 형식의 소개 페이지입니다.',
+  },
+  {
     slug: 'journey',
     path: '/journey',
     label: 'Journey',
@@ -16,12 +22,6 @@ export const ROUTES = [
     path: '/growth',
     label: 'Growth',
     description: '개발 관련 다양한 성장 이야기를 공유합니다.',
-  },
-  {
-    slug: 'life',
-    path: '/life',
-    label: 'Life',
-    description: '일상 속 나의 이야기들을 담아냅니다.',
   },
 ] as const;
 

@@ -1,0 +1,7 @@
+.journeyList {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 48px;
+  padding: 40px 0;
+  counter-reset: listNumber;
+}
