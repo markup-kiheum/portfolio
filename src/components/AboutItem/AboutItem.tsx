@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './AboutItem.module.css';
 
 interface Props {
@@ -9,7 +11,7 @@ export default function AboutItem({ question, answer }: Props) {
   return (
     <li key={question}>
       <p className={styles.question}>{question}</p>
-      <p className={styles.answer}>{answer}</p>
+      <div className={styles.answer}>{answer}</div>
     </li>
   );
 }

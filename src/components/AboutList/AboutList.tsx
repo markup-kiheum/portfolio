@@ -1,3 +1,5 @@
+'use client';
+
 import { ABOUT_ITEMS } from '@/lib/constants/about';
 
 import AboutItem from '../AboutItem';

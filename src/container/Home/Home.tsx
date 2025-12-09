@@ -1,3 +1,5 @@
+'use client';
+
 import AboutList from '@/components/AboutList';
 
 import styles from './Home.module.css';

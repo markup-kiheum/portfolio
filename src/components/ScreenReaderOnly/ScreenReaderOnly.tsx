@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './ScreenReaderOnly.module.css';
 
 interface Props {
