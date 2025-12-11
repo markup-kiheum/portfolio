@@ -1,9 +1,3 @@
-export interface HomeRoute {
-  slug: string;
-  path: string;
-  label: string;
-}
-
 export const ROUTES = [
   {
     slug: 'home',
