@@ -1,6 +1,7 @@
 /* Design Tokens */
 :root {
   /* Typography */
+  --font-size-x-large: 20px;
   --font-size-large: 18px;
   --font-size-base: 16px;
   --font-size-small: 14px;
@@ -10,10 +11,6 @@
   --radius-small: 4px;
   --radius-medium: 8px;
   --radius-large: 12px;
-
-  /* Breakpoints */
-  --breakpoint-tablet: 768px;
-  --breakpoint-desktop: 1024px;
 
   color-scheme: light dark;
 }

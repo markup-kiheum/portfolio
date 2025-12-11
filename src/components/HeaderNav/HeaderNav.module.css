@@ -2,7 +2,7 @@
   position: relative;
   height: 100%;
 
-  @media (width >= 1024px) {
+  @media (width >= 960px) {
     flex-grow: 1;
     padding: 0 40px;
   }
@@ -14,7 +14,7 @@
   width: 100%;
   padding: 60px 0;
 
-  @media (width >= 1024px) {
+  @media (width >= 960px) {
     flex-flow: row wrap;
     align-items: center;
     height: 100%;
@@ -23,14 +23,10 @@
 }
 
 .navItem {
-  margin-top: 20px;
+  padding: 12px 0;
 
-  &:first-of-type {
-    margin-top: 0;
-  }
-
-  @media (width >= 1024px) {
-    margin-top: 0;
+  @media (width >= 960px) {
+    padding: 0;
     margin-left: 40px;
 
     &:first-of-type {
@@ -42,8 +38,9 @@
 .navLink {
   display: block;
   color: var(--color-text);
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-x-large);
   font-weight: 500;
+  text-align: center;
   line-height: var(--line-height-base);
 
   &:hover {
@@ -51,8 +48,9 @@
     transition: color 200ms ease-out;
   }
 
-  @media (width >= 1024px) {
+  @media (width >= 960px) {
     font-size: var(--font-size-large);
+    text-align: left;
   }
 }
 

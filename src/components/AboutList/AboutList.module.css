@@ -1,6 +1,11 @@
 .questionList {
   display: flex;
   flex-direction: column;
-  gap: 48px;
-  padding: 40px 0;
+  gap: 32px;
+  padding: 24px 0;
+
+  @media (width >= 960px) {
+    gap: 48px;
+    padding: 40px 0;
+  }
 }

@@ -7,7 +7,7 @@
   height: 100%;
   cursor: pointer;
 
-  @media (width >= 1024px) {
+  @media (width >= 960px) {
     display: none;
   }
 }
