@@ -1,0 +1,50 @@
+.menuToggleButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  width: 60px;
+  height: 100%;
+  cursor: pointer;
+
+  @media (width >= 1024px) {
+    display: none;
+  }
+}
+
+.menuBar {
+  display: block;
+  width: 28px;
+  height: 2px;
+  margin: 0 auto;
+  background-color: var(--color-primary);
+  transition:
+    transform 200ms ease-in,
+    opacity 200ms ease-out;
+
+  &:first-of-type {
+    transform: translateY(-7px);
+  }
+
+  &:nth-of-type(2) {
+    transform: translateY(0);
+  }
+
+  &:last-of-type {
+    transform: translateY(7px);
+  }
+}
+
+.menuBarActive {
+  &:first-of-type {
+    transform: translateY(calc(-50% + 2px)) rotate(45deg);
+  }
+
+  &:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  &:last-of-type {
+    transform: translateY(calc(-50% - 2px)) rotate(-45deg);
+  }
+}

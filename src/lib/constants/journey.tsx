@@ -1,5 +1,9 @@
 import '@/styles/globals.css';
 
+export const JOURNEY_TITLE = '제가 걸어온 길을 기록합니다.';
+export const JOURNEY_DESCRIPTION =
+  '경험과 배움이 어떻게 이어져 왔는지, 그 흐름을 따라가며 저만의 성장 과정을 담았습니다.';
+
 export const JOURNEY_ITEMS = [
   {
     title: '엘리팝 반응형 홈페이지 구축',

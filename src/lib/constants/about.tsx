@@ -1,5 +1,9 @@
 import '@/styles/globals.css';
 
+export const ABOUT_TITLE = '안녕하세요. Front UI 개발자 황기흠입니다.';
+export const ABOUT_DESCRIPTION =
+  '제 소개를 조금 색다른 방식으로 보여주고 싶어 저에게 질문하고 스스로 답하는 형식으로 풀어보았습니다.';
+
 export const ABOUT_ITEMS = [
   {
     question: '스스로를 소개하자면, 어떤 사람이라고 말할 수 있을까요?',

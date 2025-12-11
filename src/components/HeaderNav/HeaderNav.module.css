@@ -1,28 +1,41 @@
 .nav {
-  flex-grow: 1;
   position: relative;
   height: 100%;
-  padding: 0 60px;
+
+  @media (width >= 1024px) {
+    flex-grow: 1;
+    padding: 0 40px;
+  }
 }
 
 .navList {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-flow: column wrap;
   width: 100%;
-  height: 100%;
-  box-sizing: border-box;
+  padding: 60px 0;
+
+  @media (width >= 1024px) {
+    flex-flow: row wrap;
+    align-items: center;
+    height: 100%;
+    padding: 0;
+  }
 }
 
 .navItem {
-  margin-left: 20px;
+  margin-top: 20px;
 
   &:first-of-type {
-    margin-left: 0;
+    margin-top: 0;
   }
 
   @media (width >= 1024px) {
+    margin-top: 0;
     margin-left: 40px;
+
+    &:first-of-type {
+      margin-left: 0;
+    }
   }
 }
 
