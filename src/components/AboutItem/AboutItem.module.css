@@ -1,7 +1,8 @@
 .question {
   display: inline-block;
   position: relative;
-  padding-left: 24px;
+  padding-left: 20px;
+  font-size: var(--font-size-small);
   font-weight: 700;
 
   &::before {
@@ -12,17 +13,23 @@
     font-weight: 700;
     content: 'Q.';
   }
+
+  @media (width >= 960px) {
+    padding-left: 24px;
+    font-size: var(--font-size-base);
+  }
 }
 
 .answer {
   position: relative;
-  padding: 24px 0 24px 24px;
+  padding: 20px 0 20px 20px;
+  font-size: var(--font-size-small);
   white-space: pre-line;
   word-break: keep-all;
 
   & > p {
     padding-top: 16px;
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-small);
 
     &:first-of-type {
       padding-top: 0;
@@ -31,10 +38,23 @@
 
   &::before {
     position: absolute;
-    top: 24px;
+    top: 20px;
     left: 0;
     color: var(--color-primary);
     font-weight: 700;
     content: 'A.';
+  }
+
+  @media (width >= 960px) {
+    padding: 24px 0 24px 24px;
+    font-size: var(--font-size-base);
+
+    & > p {
+      font-size: var(--font-size-base);
+    }
+
+    &::before {
+      top: 24px;
+    }
   }
 }
